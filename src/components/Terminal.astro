@@ -1,0 +1,46 @@
+---
+const { lines } = Astro.props as {
+  lines?: string[];
+};
+
+const defaultLines = [
+  "UNIX Sixth Edition (V6)  PDP-11",
+  "",
+  "login: mark",
+  "Last login: Fri Apr  4 03:00:00 1975 on tty0",
+  "$ date",
+  "Fri Apr  4 03:00:00 PST 1975",
+  "$ pwd",
+  "/usr/mark",
+  "$ ls -l",
+  "total 10",
+  "drwxr-xr-x  2 mark   staff    512 Apr  4 03:00 about",
+  "drwxr-xr-x  3 mark   staff    512 Apr  4 03:00 blog",
+  "drwxr-xr-x  4 mark   staff    512 Apr  4 03:00 contact",
+  "drwxr-xr-x  5 mark   staff    512 Apr  4 03:00 projects",
+  "drwxr-xr-x  2 mark   staff    512 Apr  4 03:00 resume",
+  "$ _",
+];
+
+const output = Array.isArray(lines) && lines.length ? lines : defaultLines;
+---
+
+<div
+  class="bg-black border border-[#004d00] shadow-[inset_0_0_0_1px_#002200,inset_0_0_20px_#001800] font-ibm mt-3"
+>
+  <div
+    data-terminal-container
+    class="p-3 overflow-auto max-h-[50vh] text-[#00FF33] text-[16px] leading-[1.35]"
+    aria-live="polite"
+  >
+    {output.map((line) => <div class="whitespace-pre">{line}</div>)}
+  </div>
+</div>
+
+<script>
+  const container = document.currentScript
+    ?.previousElementSibling as HTMLElement | null;
+  if (container && container.hasAttribute("data-terminal-container")) {
+    container.scrollTop = container.scrollHeight;
+  }
+</script>

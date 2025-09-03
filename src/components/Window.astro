@@ -1,0 +1,114 @@
+---
+import Link from "./Link.astro";
+
+const { title, activePath } = Astro.props as {
+  title: string;
+  activePath: string;
+};
+
+const tabs = [
+  { id: "home", label: "Home", href: "/" },
+  { id: "projects", label: "Projects", href: "/projects" },
+  { id: "blog", label: "Blog", href: "/blog" },
+  { id: "about", label: "About", href: "/about" },
+  { id: "contact", label: "Contact", href: "/contact" },
+  { id: "resume", label: "Resume", href: "/resume" },
+] as const;
+
+const normalizedPath =
+  activePath !== "/" && activePath.endsWith("/")
+    ? activePath.slice(0, -1)
+    : activePath;
+
+const baseTabClass =
+  "px-3 h-8 inline-flex items-center text-[18px] lg:text-[18px] whitespace-nowrap bg-win95-face text-win95-text border border-win95-dark ";
+const activeClass =
+  "shadow-[inset_1px_1px_0_var(--color-win95-dark),inset_-1px_-1px_0_var(--color-win95-light)] translate-x-px translate-y-px";
+const inactiveClass =
+  "shadow-[inset_1px_1px_0_var(--color-win95-light),inset_-1px_-1px_0_var(--color-win95-dark)]";
+
+function isActiveTab(href: string): boolean {
+  return (
+    normalizedPath === href || (href !== "/" && normalizedPath.startsWith(href))
+  );
+}
+
+const currentYear = new Date().getFullYear();
+---
+
+<div class="mx-auto mt-9 mb-9 w-[95vw] max-w-4xl outline-none">
+  <div
+    role="group"
+    aria-label="Application window"
+    class="bg-win95-face border border-win95-dark shadow-[inset_1px_1px_0_var(--color-win95-light),inset_-1px_-1px_0_var(--color-win95-darker),2px_2px_0_var(--color-win95-shadow)]"
+  >
+    <div
+      class="flex items-center justify-between h-8 px-2 bg-win95-accent text-win95-accentText shadow-[inset_0_-1px_0_#00000055]"
+    >
+      <div class="flex items-center gap-2 text-[14px] font-bold">
+        <span
+          aria-hidden
+          class="w-4 h-4 border border-win95-dark bg-[linear-gradient(45deg,#808080,#c0c0c0)] shadow-[inset_1px_1px_0_var(--color-win95-light),inset_-1px_-1px_0_var(--color-win95-darker)]"
+        ></span>
+        {title}
+      </div>
+      <div class="flex items-center gap-1">
+        {
+          [
+            { label: "Minimize", symbol: "_" },
+            { label: "Maximize", symbol: "□" },
+            { label: "Close", symbol: "×" },
+          ].map((btn) => (
+            <button
+              type="button"
+              aria-label={btn.label}
+              aria-disabled="true"
+              class="w-6 h-6 leading-none text-[12px] bg-win95-face text-win95-text border border-win95-dark shadow-[inset_1px_1px_0_var(--color-win95-light),inset_-1px_-1px_0_var(--color-win95-darker)]"
+              tabindex="-1"
+            >
+              {btn.symbol}
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="flex flex-row justify-between items-center">
+      <nav class="px-2 pt-1" aria-label="Sections">
+        <div class="flex flex-wrap gap-1">
+          {
+            tabs.map((tab) => (
+              <a
+                href={tab.href}
+                aria-current={isActiveTab(tab.href) ? "page" : undefined}
+                class={
+                  baseTabClass +
+                  (isActiveTab(tab.href) ? activeClass : inactiveClass)
+                }
+              >
+                {tab.label}
+              </a>
+            ))
+          }
+        </div>
+      </nav>
+      <div class="mr-3 flex flex-col md:flex-row gap-0 md:gap-2 shrink-0">
+        <Link href="https://github.com/markmdev/">GitHub</Link>
+        <Link href="https://www.linkedin.com/in/markmdev/">LinkedIn</Link>
+      </div>
+    </div>
+
+    <div
+      class="p-3 shadow-[inset_1px_1px_0_var(--color-win95-dark),inset_-1px_-1px_0_var(--color-win95-light)] bg-win95-face min-h-[40vh]"
+    >
+      <slot />
+    </div>
+
+    <div
+      class="h-7 px-2 flex items-center justify-between text-[12px] bg-win95-face shadow-[inset_0_1px_0_var(--color-win95-light),inset_0_-1px_0_var(--color-win95-dark)]"
+    >
+      <span>Status: Ready</span>
+      <span>© {currentYear}</span>
+    </div>
+  </div>
+</div>

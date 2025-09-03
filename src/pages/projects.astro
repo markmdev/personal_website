@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import photo from "../images/mark-photo.jpeg";
+import LingputLogo from "../images/projects/lingput.jpeg";
+import CodeImage from "../images/projects/code.png";
+
+interface Project {
+  title: string;
+  description: string;
+  image: ImageMetadata;
+  tags: string[];
+  href?: string;
+  repo?: string;
+  demo?: string;
+}
+
+const projects: Project[] = [
+  {
+    title: "Lingput",
+    description:
+      "A full-stack app that helps learners acquire a new language through short, AI-generated stories",
+    image: LingputLogo,
+    tags: [
+      "Next.js",
+      "Express.js",
+      "Prisma ORM",
+      "Redis",
+      "BullMQ",
+      "PostgreSQL",
+      "TailwindCSS",
+      "Docker",
+      "NGINX",
+      "Supabase",
+      "OpenAI",
+    ],
+    href: "/projects/lingput",
+    repo: "https://github.com/markmdev/lingput",
+    demo: "https://lingput.dev",
+  },
+  {
+    title: "Personal Website",
+    description: "A Windows 95-inspired personal website.",
+    image: photo,
+    tags: ["Astro", "React", "Tailwind"],
+    href: "/projects/personal-website",
+    repo: "https://github.com/markmdev/personal_website",
+  },
+  {
+    title: "New Project (In Progress)",
+    description: "In Progress",
+    image: CodeImage,
+    tags: [],
+  },
+];
+---
+
+<BaseLayout>
+  <div class="space-y-4">
+    <h1 class="text-xl">Projects</h1>
+    <div class="grid gap-4 grid-cols-1 lg:grid-cols-2">
+      {
+        projects.map((project) => (
+          <ProjectCard
+            title={project.title}
+            description={project.description}
+            image={project.image}
+            tags={project.tags}
+            href={project.href}
+            repo={project.repo}
+            demo={project.demo}
+          />
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>

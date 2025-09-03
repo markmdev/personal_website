@@ -1,0 +1,20 @@
+---
+import { Image } from "astro:assets";
+
+const { src, alt, caption, class: className, ...rest } = Astro.props;
+---
+
+<figure
+  class={`inline-block bg-win95-face border border-win95-dark shadow-[inset_1px_1px_0_var(--color-win95-light),inset_-1px_-1px_0_var(--color-win95-darker),2px_2px_0_var(--color-win95-shadow)] ${className ?? ""}`}
+>
+  <div class="p-1 bg-win95-face">
+    <Image src={src} alt={alt} {...rest} loading="eager" />
+  </div>
+  {
+    caption && (
+      <figcaption class="px-2 py-1 text-[12px] bg-win95-face border-t border-win95-dark">
+        {caption}
+      </figcaption>
+    )
+  }
+</figure>

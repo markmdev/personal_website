@@ -1,0 +1,57 @@
+---
+import Link from "./Link.astro";
+import Win95Image from "./Win95Image.astro";
+
+const {
+  title,
+  excerpt,
+  tags = [],
+  href,
+  date,
+  cover,
+} = Astro.props as {
+  title: string;
+  excerpt: string;
+  tags: string[];
+  href: string;
+  date: string;
+  cover?: ImageMetadata;
+};
+---
+
+<article
+  class="bg-win95-face border border-win95-dark shadow-[inset_1px_1px_0_var(--color-win95-light),inset_-1px_-1px_0_var(--color-win95-darker),2px_2px_0_var(--color-win95-shadow)]"
+>
+  <header
+    class="flex items-center justify-between h-fit px-2 bg-win95-accent text-win95-accentText shadow-[inset_0_-1px_0_#00000055]"
+  >
+    <h3 class="text-[13px] font-bold">
+      <a href={href} class="no-underline text-win95-accentText hover:underline"
+        >{title}</a
+      >
+    </h3>
+    {date && <time class="text-[11px] opacity-90">{date}</time>}
+  </header>
+
+  <div class="p-3 space-y-3">
+    {cover && <Win95Image src={cover} alt={title} class="w-full" />}
+
+    {excerpt && <p class="text-[14px] leading-5">{excerpt}</p>}
+
+    {
+      tags.length > 0 && (
+        <ul class="flex flex-wrap gap-1 text-[12px]">
+          {tags.map((t) => (
+            <li class="px-2 py-0.5 bg-win95-face border border-win95-dark shadow-[inset_1px_1px_0_var(--color-win95-light),inset_-1px_-1px_0_var(--color-win95-dark)]">
+              {t}
+            </li>
+          ))}
+        </ul>
+      )
+    }
+
+    <div class="pt-1">
+      <Link href={href}>Read more</Link>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,75 @@
+---
+import Link from "./Link.astro";
+import Win95Image from "./Win95Image.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: any;
+  tags?: string[];
+  href?: string;
+  repo?: string;
+  demo?: string;
+}
+
+const {
+  title,
+  description,
+  image,
+  tags = [],
+  href,
+  repo,
+  demo,
+} = Astro.props as Props;
+---
+
+<article
+  class="bg-win95-face border border-win95-dark shadow-[inset_1px_1px_0_var(--color-win95-light),inset_-1px_-1px_0_var(--color-win95-darker),2px_2px_0_var(--color-win95-shadow)]"
+>
+  <header
+    class="flex items-center justify-between h-7 px-2 bg-win95-accent text-win95-accentText shadow-[inset_0_-1px_0_#00000055]"
+  >
+    <h3 class="text-[13px] font-bold truncate">{title}</h3>
+    <div class="flex gap-1">
+      <span
+        class="w-3 h-3 bg-win95-face border border-win95-dark shadow-[inset_1px_1px_0_var(--color-win95-light),inset_-1px_-1px_0_var(--color-win95-darker)]"
+      ></span>
+      <span
+        class="w-3 h-3 bg-win95-face border border-win95-dark shadow-[inset_1px_1px_0_var(--color-win95-light),inset_-1px_-1px_0_var(--color-win95-darker)]"
+      ></span>
+      <span
+        class="w-3 h-3 bg-win95-face border border-win95-dark shadow-[inset_1px_1px_0_var(--color-win95-light),inset_-1px_-1px_0_var(--color-win95-darker)]"
+      ></span>
+    </div>
+  </header>
+
+  <div class="p-3 space-y-3">
+    {image && <Win95Image src={image} alt={title} class="w-full" />}
+
+    {description && <p class="text-[14px] leading-5">{description}</p>}
+
+    {
+      tags.length > 0 && (
+        <ul class="flex flex-wrap gap-1 text-[12px]">
+          {tags.map((t) => (
+            <li class="px-2 py-0.5 bg-win95-face border border-win95-dark shadow-[inset_1px_1px_0_var(--color-win95-light),inset_-1px_-1px_0_var(--color-win95-dark)]">
+              {t}
+            </li>
+          ))}
+        </ul>
+      )
+    }
+
+    <div class="flex gap-4 pt-1 text-nowrap">
+      {demo && <Link href={demo}>Live Demo</Link>}
+      {href && <Link href={href}>Details</Link>}
+      {
+        repo && (
+          <Link href={repo} newTab={true}>
+            Repository
+          </Link>
+        )
+      }
+    </div>
+  </div>
+</article>

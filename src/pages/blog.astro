@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogCard from "../components/BlogCard.astro";
+
+interface BlogCard {
+  href: string;
+  title: string;
+  excerpt: string;
+  tags: string[];
+  date: string;
+  cover?: ImageMetadata;
+}
+
+const blogCards: BlogCard[] = [
+  {
+    href: "https://medium.com/@markmdev/stop-writing-brittle-if-else-error-handlers-in-node-js-db29c0d3c64c",
+    title: "A Clean Way to Refactor Error Handling in Node.js",
+    excerpt:
+      "How I simplified and hardened error handling patterns in a real-world Node.js app.",
+    tags: ["Node.js", "Architecture"],
+    date: "2025-07-26",
+  },
+];
+---
+
+<BaseLayout>
+  <div class="space-y-4">
+    <h1 class="text-xl">Blog</h1>
+
+    <div class="grid gap-4 grid-cols-1 lg:grid-cols-2">
+      {
+        blogCards.map((blogCard) => (
+          <BlogCard
+            href={blogCard.href}
+            title={blogCard.title}
+            excerpt={blogCard.excerpt}
+            tags={blogCard.tags}
+            date={blogCard.date}
+          />
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>

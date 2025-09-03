@@ -1,0 +1,24 @@
+---
+import "../styles/global.css";
+const pageTitle = "Home Page";
+import Window from "../components/Window.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <div>
+      <Window title={pageTitle} activePath={Astro.url.pathname}>
+        <div class="font-plex">
+          <slot />
+        </div>
+      </Window>
+    </div>
+  </body>
+</html>

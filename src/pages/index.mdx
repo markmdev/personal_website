@@ -1,0 +1,140 @@
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Terminal from "../components/Terminal.astro";
+import Win95Image from "../components/Win95Image.astro";
+import Tech from "../components/Tech.astro";
+import MarkPhoto from "../images/mark-photo.jpeg";
+
+import TypeScriptImage from "../images/docs/TypeScript.png";
+import JavaScriptImage from "../images/docs/JavaScript.png";
+import NodejsImage from "../images/docs/Node.js.png";
+import ExpressImage from "../images/docs/Express.png";
+import NextjsImage from "../images/docs/Next.js.png";
+import ReactImage from "../images/docs/React.png";
+import PostgresImage from "../images/docs/PostgresSQL.png";
+import PrismaImage from "../images/docs/prisma.png";
+import RedisImage from "../images/docs/Redis.png";
+import TailwindImage from "../images/docs/Tailwind CSS.png";
+import JestImage from "../images/docs/Jest.png";
+import DockerImage from "../images/docs/Docker.png";
+import BullmqImage from "../images/docs/bullmq-logo.png";
+import AWSImage from "../images/docs/AWS.png";
+import DigitalOceanImage from "../images/docs/Digital Ocean.png";
+import GitImage from "../images/docs/Git.png";
+import GitHubActionsImage from "../images/docs/GitHub Actions.png";
+import GitHubImage from "../images/docs/GitHub.png";
+import NGINXImage from "../images/docs/NGINX.png";
+import NPMImage from "../images/docs/NPM.png";
+import PythonImage from "../images/docs/Python.png";
+import SocketioImage from "../images/docs/Socket.io.png";
+import VitejsImage from "../images/docs/Vite.js.png";
+
+import { Image } from "astro:assets";
+
+<BaseLayout>
+  <div className="font-plex">
+  <div className="flex flex-col-reverse lg:flex-row justify-between">
+  <div>
+    **Hi, I’m Mark** 👋
+
+    I’m a **backend-focused Fullstack Developer** based in **San Jose, CA**, currently
+    pursuing a **BS in Computer Science (graduating Dec 2026)**.
+
+    I love building real-world projects, especially backend systems that are **scalable,
+    reliable, and well-designed**. Coding has been my passion since I got my first computer
+    at age 6, and I’ve been hooked ever since.
+
+    When I’m not coding, I’m traveling — I’ve already been to **25 countries** and counting.
+
+    <br />
+    🚀 Currently available for **internships** or **entry-level roles**.
+    </div>
+
+    <div className="shrink-0 w-1/4 text-center text-sm">
+
+<Win95Image src={MarkPhoto} alt="Mark"/>
+<p className="hidden md:block">Fullstack developer</p>
+<p className="hidden md:block">Mark</p>
+</div>
+</div>
+<br/>
+    ### My Tech Stack:
+    <div className="space-y-6">
+  {/* Languages */}
+  <div className="flex items-center gap-6">
+    <h3 className="w-32 text-right font-medium text-sm">Languages</h3>
+    <div className="flex-1 grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-4 place-items-center">
+      <Tech src={TypeScriptImage} alt="TypeScript" label="TypeScript" />
+      <Tech src={JavaScriptImage} alt="JavaScript" label="JavaScript" />
+      <Tech src={PythonImage} alt="Python" label="Python" />
+    </div>
+  </div>
+
+{/* Frameworks & Libraries */}
+
+<div className="flex items-center gap-6">
+  <h3 className="w-32 text-right font-medium text-sm">
+    Frameworks & Libraries
+  </h3>
+  <div className="flex-1 grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-4 place-items-center">
+    <Tech src={NodejsImage} alt="Node.js" label="Node.js" />
+    <Tech src={ExpressImage} alt="Express" label="Express" />
+    <Tech src={NextjsImage} alt="Next.js" label="Next.js" />
+    <Tech src={ReactImage} alt="React" label="React" />
+    <Tech src={SocketioImage} alt="Socket.io" label="Socket.io" />
+    <Tech src={JestImage} alt="Jest" label="Jest" />
+    <Tech src={VitejsImage} alt="Vite.js" label="Vite.js" />
+  </div>
+</div>
+
+{/* Databases & Tools */}
+
+<div className="flex items-center gap-6">
+  <h3 className="w-32 text-right font-medium text-sm">Databases & Tools</h3>
+  <div className="flex-1 grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-4 place-items-center">
+    <Tech src={PostgresImage} alt="PostgreSQL" label="PostgreSQL" />
+    <Tech src={PrismaImage} alt="Prisma" label="Prisma" />
+    <Tech src={RedisImage} alt="Redis" label="Redis" />
+    <Tech src={BullmqImage} alt="BullMQ" label="BullMQ" />
+  </div>
+</div>
+
+{/* Infra & DevOps */}
+
+<div className="flex items-center gap-6">
+  <h3 className="w-32 text-right font-medium text-sm">Infra & DevOps</h3>
+  <div className="flex-1 grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-4 place-items-center">
+    <Tech src={DockerImage} alt="Docker" label="Docker" />
+    <Tech src={NGINXImage} alt="NGINX" label="NGINX" />
+    <Tech src={AWSImage} alt="AWS" label="AWS" />
+    <Tech src={DigitalOceanImage} alt="Digital Ocean" label="Digital Ocean" />
+    <Tech
+      src={GitHubActionsImage}
+      alt="GitHub Actions"
+      label="GitHub Actions"
+    />
+    <Tech src={GitHubImage} alt="GitHub" label="GitHub" />
+    <Tech src={NPMImage} alt="NPM" label="NPM" />
+  </div>
+</div>
+
+{/* UI */}
+
+  <div className="flex items-center gap-6">
+    <h3 className="w-32 text-right font-medium text-sm">UI</h3>
+    <div className="flex-1 grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-4 place-items-center">
+      <Tech src={TailwindImage} alt="Tailwind CSS" label="Tailwind CSS" />
+    </div>
+  </div>
+</div>
+
+<br />I have strong frontend skills and can build responsive, accessible, and
+optimized UIs using React/Next.js, but my **main focus** is **backend systems**.
+I enjoy building scalable applications and deepening my knowledge in areas like
+**API design, database optimization, caching strategies, scalability &
+concurrency, CI/CD, and system design**. I’m also expanding my stack by adding
+**Java** as a backend-focused language for upcoming projects..
+
+    <Terminal />
+
+  </div>
+</BaseLayout>

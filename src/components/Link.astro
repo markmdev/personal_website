@@ -1,0 +1,40 @@
+---
+const {
+  href,
+  className = "",
+  newTab = false,
+  title = "",
+} = Astro.props as {
+  href: string;
+  className?: string;
+  newTab?: boolean;
+  title?: string;
+};
+
+function mergeClasses(...parts: Array<string | undefined>) {
+  return parts.filter(Boolean).join(" ");
+}
+
+const classic = mergeClasses(
+  "underline text-[#0000EE] visited:text-[#551A8B] active:text-[#EE0000] hover:underline focus:outline-dotted focus:outline-1 focus:outline-offset-2 focus:outline-black",
+  className,
+);
+---
+
+<span class="inline-flex gap-1 items-center">
+  <a
+    href={href}
+    class={classic}
+    target={newTab ? "_blank" : undefined}
+    rel={newTab ? "noreferrer noopener" : undefined}
+    title={title}
+  >
+    <slot />
+  </a>
+  <img
+    src="/link.png"
+    alt="Link icon"
+    loading="eager"
+    class="shrink-0 w-3 h-3"
+  />
+</span>
