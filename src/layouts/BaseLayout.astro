@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Window from "../components/Window.astro";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
+import CookieBanner from "../components/CookieBanner.astro";
 
 export interface Props {
   title?: string;
@@ -99,5 +100,6 @@ const shouldLoadGA = !isDev && GA_TRACKING_ID;
         </div>
       </Window>
     </div>
+    <CookieBanner />
   </body>
 </html>
