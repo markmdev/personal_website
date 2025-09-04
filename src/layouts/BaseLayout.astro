@@ -1,8 +1,6 @@
 ---
 import "../styles/global.css";
 import Window from "../components/Window.astro";
-import GoogleAnalytics from "../components/GoogleAnalytics.astro";
-import CookieBanner from "../components/CookieBanner.astro";
 
 export interface Props {
   title?: string;
@@ -20,9 +18,6 @@ const {
   canonicalURL = Astro.url.href,
 } = Astro.props;
 
-const isDev = import.meta.env.DEV;
-const GA_TRACKING_ID = import.meta.env.PUBLIC_GA_TRACKING_ID;
-const shouldLoadGA = !isDev && GA_TRACKING_ID;
 ---
 
 <html lang="en">
@@ -57,8 +52,7 @@ const shouldLoadGA = !isDev && GA_TRACKING_ID;
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImage} />
 
-    <!-- Google tag (gtag.js) -->
-    {shouldLoadGA && <GoogleAnalytics id={GA_TRACKING_ID} />}
+    <script defer data-domain="markmdev.com" src="https://plausible.io/js/script.outbound-links.js"></script>
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -100,6 +94,6 @@ const shouldLoadGA = !isDev && GA_TRACKING_ID;
         </div>
       </Window>
     </div>
-    <CookieBanner />
+    <!-- <CookieBanner /> -->
   </body>
 </html>
