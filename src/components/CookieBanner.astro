@@ -12,7 +12,18 @@
     box-shadow: 0 10px 24px rgba(0,0,0,.35);
     display: none;
   }
-  .cookie-banner__row { display: flex; gap: .75rem; align-items: center; }
+  .cookie-banner__row {
+  display: flex;
+  flex-direction: column;  
+  align-items: flex-start; 
+  gap: .75rem;
+}
+
+.cookie-banner__actions {
+  display: flex;
+  gap: .75rem;
+}
+
   .cookie-banner__text { flex: 1; line-height: 1.35; font-size: .95rem; }
   .cookie-banner__btn {
     appearance: none; border: 1px solid #2a3439; background: transparent;
@@ -28,15 +39,18 @@
 </style>
 
 <div id="cookie-banner" class="cookie-banner font-sans" role="region" aria-label="Cookies">
-  <div class="cookie-banner__row">
-    <div class="cookie-banner__text">
-      We use cookies for <strong>analytics</strong> only. Ads & personalization are off by default.
-      Choose <em>Accept</em> to enable analytics, or <em>Reject</em> to continue with essentials.
-      <a href="/privacy">Privacy Policy</a>
-    </div>
-    <button id="cookie-reject" class="cookie-banner__btn">Reject</button>
-    <button id="cookie-accept" class="cookie-banner__btn cookie-banner__btn--primary">Accept</button>
-  </div>
+    <div class="cookie-banner__row">
+        <div class="cookie-banner__text">
+          We use cookies for <strong>analytics</strong> only. Ads & personalization are off by default.
+          Choose <em>Accept</em> to enable analytics, or <em>Reject</em> to continue with essentials.
+          <a href="/privacy">Privacy Policy</a>
+        </div>
+        <div class="cookie-banner__actions">
+          <button id="cookie-reject" class="cookie-banner__btn">Reject</button>
+          <button id="cookie-accept" class="cookie-banner__btn cookie-banner__btn--primary">Accept</button>
+        </div>
+      </div>
+      
 </div>
 
 <script is:inline>
