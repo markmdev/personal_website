@@ -1,0 +1,30 @@
+---
+export interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<!-- Google Analytics with Privacy Controls -->
+<script async src={`https://www.googletagmanager.com/gtag/js?id=${id}`}
+></script>
+<script define:vars={{ id }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  // Configure with privacy settings
+  gtag("config", id, {
+    anonymize_ip: true,
+    cookie_flags: "max-age=7200;secure;samesite=none",
+  });
+
+  // Consent mode (optional)
+  gtag("consent", "default", {
+    ad_storage: "denied",
+    analytics_storage: "denied",
+  });
+</script>

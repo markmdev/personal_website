@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import LinkImage from "../images/link.png";
+
 const {
   href,
   className = "",
@@ -31,8 +34,8 @@ const classic = mergeClasses(
   >
     <slot />
   </a>
-  <img
-    src="/link.png"
+  <Image
+    src={LinkImage}
     alt="Link icon"
     loading="eager"
     class="shrink-0 w-3 h-3"
