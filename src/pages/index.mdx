@@ -2,8 +2,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Terminal from "../components/Terminal.astro";
 import Win95Image from "../components/Win95Image.astro";
 import Tech from "../components/Tech.astro";
+import Link from "../components/Link.astro";
 import MarkPhoto from "../images/mark-photo.jpeg";
-
 import TypeScriptImage from "../images/docs/TypeScript.png";
 import JavaScriptImage from "../images/docs/JavaScript.png";
 import NodejsImage from "../images/docs/Node.js.png";
@@ -36,17 +36,21 @@ import { Image } from "astro:assets";
   <div>
     **Hi, I’m Mark** 👋
 
-    I’m a **backend-focused Fullstack Developer** based in **San Jose, CA**, currently
-    pursuing a **BS in Computer Science (graduating Dec 2026)**.
-
-    I love building real-world projects, especially backend systems that are **scalable,
-    reliable, and well-designed**. Coding has been my passion since I got my first computer
-    at age 6, and I’ve been hooked ever since.
-
-    When I’m not coding, I’m traveling — I’ve already been to **25 countries** and counting.
+    I’m a **backend-focused Fullstack Developer** based in **San Jose, CA**, who builds
+    production-ready systems. Currently deployed: <Link href="/projects/lingput">Lingput.dev</Link> - a
+    scalable language learning platform with async job processing (BullMQ + Redis), caching,
+    and containerized layered architecture + Dependency Injection.
 
     <br />
-    🚀 Currently available for **internships** or **entry-level roles**.
+
+I love building real-world projects, especially backend systems that are
+**scalable, reliable, and well-designed**. Coding has been my passion since I
+got my first computer at age 6, and I’ve been hooked ever since. When I’m not
+coding, I’m exploring the world - I’ve already been to **25 countries** and
+counting!
+
+    <br />
+    Available for **backend** or **fullstack** positions. Reach out on <Link href="https://www.linkedin.com/in/markmdev/">LinkedIn</Link>
     </div>
 
     <div className="shrink-0 w-1/4 text-center text-sm">
@@ -131,8 +135,7 @@ import { Image } from "astro:assets";
 optimized UIs using React/Next.js, but my **main focus** is **backend systems**.
 I enjoy building scalable applications and deepening my knowledge in areas like
 **API design, database optimization, caching strategies, scalability &
-concurrency, CI/CD, and system design**. I’m also expanding my stack by adding
-**Java** as a backend-focused language for upcoming projects..
+concurrency, CI/CD, and system design**.
 
     <Terminal />
 
