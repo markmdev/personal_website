@@ -1,43 +1,140 @@
-# Astro Starter Kit: Minimal
+# Personal Website - Windows 95 Inspired Portfolio
 
-```sh
-npm create astro@latest -- --template minimal
+A retro-styled personal portfolio website that combines nostalgic Windows 95 aesthetics with modern web development practices.
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8cc94fac-f904-4b91-a821-ef42abc37a08/deploy-status)](https://app.netlify.com/projects/markmdev/deploys)
+
+## 🖥️ Live Demo
+
+**Website:** [https://markmdev.com/](https://markmdev.com/)
+
+## 📸 Screenshots
+
+![Homepage Screenshot](./docs/homepage.png)
+
+![Projects Page](./docs/projects.png)
+
+## ✨ Features
+
+- **Retro Windows 95 UI** - Authentic pixel-perfect design with custom components
+- **Responsive Design** - Works seamlessly on desktop and mobile while maintaining retro aesthetic
+- **Interactive Elements** - Clickable windows, hover effects, and smooth animations
+- **Project Showcase** - Dedicated sections for technical projects with live demos
+- **Blog System** - Integrated technical writing platform
+- **Performance Optimized** - Fast loading times with static site generation
+- **Accessibility First** - Semantic HTML and ARIA roles for screen readers
+
+## 🛠️ Tech Stack
+
+- **Framework:** [Astro](https://astro.build/) - Static site generation with component islands
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) with custom Windows 95 theme
+- **Fonts:** IBM Plex Mono, IBM_VGA_8x16, Microsoft Sans-Serif
+- **Deployment:** [Netlify](https://netlify.com/) with automated CI/CD
+- **Build Tools:** Vite, GitHub Actions
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/markmdev/personal_website.git
+cd personal_website
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Visit `http://localhost:4321` to see the site locally.
 
-## 🚀 Project Structure
+### Build for Production
 
-Inside of your Astro project, you'll see the following folders and files:
+```bash
+# Build static files
+npm run build
 
-```text
+# Preview production build
+npm run preview
+```
+
+## 📁 Project Structure
+
+```
 /
-├── public/
+├── public/           # Static assets (images, fonts, etc.)
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/   # Reusable Astro components
+│   ├── layouts/      # Page layouts
+│   ├── pages/        # Route pages
+│   ├── styles/       # Global CSS and Tailwind config
+│   └── images/       # Optimized images
+├── astro.config.mjs  # Astro configuration
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🎨 Design System
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Windows 95 Theme
 
-Any static assets, like images, can be placed in the `public/` directory.
+- **Colors:** Authentic Windows 95 palette (silver, blue, gray)
+- **Typography:** Pixel-perfect fonts matching the original OS
+- **Components:** Custom window frames, buttons, and form elements
+- **Responsive:** Maintains retro feel across all screen sizes
 
-## 🧞 Commands
+### Key Components
 
-All commands are run from the root of the project, from a terminal:
+- `Window` - Main Window component
+- `Win95Image` - Retro-styled image frame
+- `Terminal` - Command-line interface
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 🔧 Customization
 
-## 👀 Want to learn more?
+### Adding New Projects
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. Add project data to `src/pages/projects.astro`
+2. Include screenshots in `public/projects/`
+3. Create project page in `src/pages/projects/`
+
+### Modifying Styles
+
+- Custom styles in `src/styles/global.css`
+- Component-specific styles in respective `.astro` files
+
+## 📦 Deployment
+
+The site automatically deploys to Netlify on every push to the main branch via GitHub Actions.
+
+## 🤝 Contributing
+
+While this is a personal portfolio, I welcome feedback and suggestions:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/improvement`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature/improvement`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙋‍♂️ Author
+
+**Mark Morgan**
+
+- Website: [markmdev.com](https://markmdev.com)
+- LinkedIn: [linkedin.com/in/markmdev](https://linkedin.com/in/markmdev)
+- GitHub: [github.com/markmdev](https://github.com/markmdev)
+
+## 🙏 Acknowledgments
+
+- Windows 95 design inspiration from Microsoft's original OS
+- IBM Plex font family for modern typography
+- Astro community for excellent documentation and support
