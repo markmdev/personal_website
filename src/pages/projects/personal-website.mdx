@@ -6,97 +6,80 @@ import Link from "../../components/Link.astro";
 import WebsiteImage from "../../images/mark-photo.jpeg";
 import Win95Image from "../../components/Win95Image.astro";
 
-<BaseLayout 
+<BaseLayout
   title="Mark - Backend-Focused Fullstack Developer | Node.js & TypeScript Expert"
   description="Backend-focused Fullstack Developer in San Jose, CA. Specialized in Node.js, TypeScript, PostgreSQL, and scalable system architecture. Reduced API response times by 85% with Redis caching."
   keywords="fullstack developer, backend developer, node.js, typescript, postgresql, redis, san jose developer, api optimization, system architecture, lingput"
 >
-  <span class="text-xl font-semibold">Personal Website - A Windows 95-Inspired Developer Portfolio</span>
+  <span class="text-xl font-semibold">
+    Personal Website - Performance-Optimized Developer Portfolio
+  </span>
+  <div class="flex gap-2">
+    <Link href="https://markmdev.com">LIVE SITE</Link>
+    <Link href="https://github.com/markmdev/personal_website">GITHUB REPO</Link>
+  </div>
+  <Win95Image src={WebsiteImage} alt="Personal website screenshot" class="w-1/3" />
+  <br />
+  <span class="text-lg font-semibold">Project Overview</span>
 
-<div class="flex gap-2">
-  <Link href="https://markmdev.com">LIVE SITE</Link>
-  <Link href="https://github.com/markmdev/portfolio">GITHUB REPO</Link>
-</div>
-<Win95Image
-  src={WebsiteImage}
-  alt="Personal website screenshot"
-  class="w-1/3"
-/>
-<br />
-<span class="text-lg font-semibold">What is This?</span>
+A performance-optimized static portfolio website showcasing projects, technical writing, and professional
+background. Built with Windows 95-inspired aesthetics while maintaining modern web standards and accessibility
+compliance.
 
-This is my **personal portfolio website**, built to showcase my projects, blog posts, and background.
-Instead of using a modern minimalist design, I decided to create a **retro Windows 95 aesthetic**,
-mixing nostalgic UI with clean, accessible code.
-
-<br />
-<span class="text-lg font-semibold">Key Features</span>
-
-<ul class="list-disc ml-6">
-  <li>
-    **Retro UI:** Styled with Windows 95-inspired components and pixel fonts.
-  </li>
-  <li>
-    **Responsive design:** Works seamlessly on both desktop and mobile while
-    keeping the retro look.
-  </li>
-  <li>
-    **Projects & blog:** Each project has its own “window” with details, and the
-    blog highlights my learnings.
-  </li>
-  <li>
-    **Resume & contact:** Easy access to connect with me or download my CV.
-  </li>
-</ul>
-
-<br />
-<span class="text-lg font-semibold">Technical Highlights</span>
-
-I treated this as more than just a design experiment - it’s also a chance to practice modern frontend techniques:
-
-<ul class="list-disc ml-6">
-  <li>
-    **Framework:** Astro for fast static generation and simple content
-    management.
-  </li>
-  <li>
-    **Styling:** Tailwind CSS with custom themes (Win95 palette, pixel fonts).
-  </li>
-  <li>
-    **Performance:** Optimized assets, image strategies, and responsive
-    typography.
-  </li>
-  <li>
-    **Accessibility:** Semantic HTML and ARIA roles so screen readers handle
-    decorative elements properly.
-  </li>
-  <li>
-    **Deployment:** CI/CD pipeline with GitHub Actions for automatic builds and
-    deploys.
-  </li>
-</ul>
-
-<br />
-<span class="text-lg font-semibold">Tech Stack</span>
-
-<ul class="list-disc ml-6">
-  <li>**Frontend:** Astro, Tailwind CSS</li>
-  <li>**Deployment:** Netlify</li>
-  <li>
-    **Design:** Custom fonts (IBM Plex Mono, IBM_VGA_8x16, Microsoft
-    Sans-Serif), Windows-inspired UI
-  </li>
-</ul>
-
-<br />
-<span class="text-lg font-semibold">Why I Built This</span>
-
-I wanted my portfolio to reflect both my **technical skills** and my **personality**.
-Instead of a generic template, I built something memorable that combines my love for coding with a nostalgic retro style.
-It’s not just a portfolio - it’s also a project in itself that demonstrates my **frontend, design, and deployment skills**.
-
-<br />
-<br />
-<Link href="https://markmdev.com">View the Live Site</Link>
-
+  <br />
+  <span class="text-lg font-semibold">Performance & Quality Metrics</span>
+  <ul class="list-disc ml-6">
+    <li>
+      **Perfect Lighthouse scores:** 100/100 across Performance, Accessibility, Best Practices, and
+      SEO
+    </li>
+    <li>**Sub-500ms load times** with optimized static site generation</li>
+    <li>**Zero blocking resources** and minimal cumulative layout shift (0.017)</li>
+    <li>**Fully accessible** with semantic HTML and ARIA roles for screen reader compatibility</li>
+  </ul>
+  <br />
+  <span class="text-lg font-semibold">Technical Implementation</span>
+  <ul class="list-disc ml-6">
+    <li>**Static Site Generation:** Astro framework for optimal performance and SEO</li>
+    <li>
+      **Styling Architecture:** Tailwind CSS with custom component system and Windows 95 color
+      palette
+    </li>
+    <li>
+      **Performance Optimization:** Lazy loading, efficient asset bundling, and responsive image
+      strategies
+    </li>
+    <li>**Responsive Design:** Maintains retro aesthetic across all device sizes</li>
+    <li>**DevOps Pipeline:** Automated CI/CD with GitHub Actions and Netlify deployment</li>
+  </ul>
+  <br />
+  <span class="text-lg font-semibold">Key Features</span>
+  <ul class="list-disc ml-6">
+    <li>Interactive project showcase with dedicated "windows" for each project</li>
+    <li>Integrated technical blog system for sharing development insights</li>
+    <li>Mobile-responsive retro interface with authentic Windows 95 components</li>
+    <li>Optimized content delivery and fast navigation</li>
+  </ul>
+  <br />
+  <span class="text-lg font-semibold">Tech Stack</span>
+  <ul class="list-disc ml-6">
+    <li>**Frontend:** Astro, Tailwind CSS, Custom CSS Components</li>
+    <li>**Performance:** Static site generation, optimized asset delivery</li>
+    <li>**Deployment:** GitHub Actions CI/CD, Netlify hosting</li>
+    <li>**Design System:** Custom Windows 95-inspired component library</li>
+  </ul>
+  <br />
+  <span class="text-lg font-semibold">Project Motivation</span>
+  Rather than using a generic template, I wanted to create a portfolio that reflects both technical
+  competency and personality. The Windows 95 aesthetic serves as a memorable differentiator while
+  demonstrating frontend skills and attention to user experience. This project showcases the ability
+  to balance creative vision with technical excellence and performance standards.
+  <br />
+  <span class="text-lg font-semibold">Technical Achievements</span>
+  This project demonstrates frontend optimization skills, accessibility best practices, and modern deployment
+  workflows. The perfect Lighthouse scores reflect attention to performance engineering and user experience
+  standards.
+  <br />
+  <br />
+  <Link href="https://markmdev.com">View the Live Site</Link>
 </BaseLayout>

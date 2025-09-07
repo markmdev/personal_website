@@ -11,8 +11,14 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
+  build: {
+    inlineStylesheets: "auto",
+  },
   vite: {
     plugins: [tailwindcss()],
+    build: {
+      cssCodeSplit: false,
+    },
   },
   site: "https://markmdev.com/",
 

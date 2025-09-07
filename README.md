@@ -8,6 +8,13 @@ A retro-styled personal portfolio website that combines nostalgic Windows 95 aes
 
 **Website:** [https://markmdev.com/](https://markmdev.com/)
 
+## 📊 Performance & Quality
+
+- **Perfect Lighthouse Scores:** 100/100 across Performance, Accessibility, Best Practices, and SEO
+- **Load Time:** Sub-500ms first contentful paint
+- **Accessibility:** Full screen reader compatibility with semantic HTML and ARIA roles
+- **SEO Optimized:** Perfect search engine optimization score
+
 ## 📸 Screenshots
 
 ![Homepage Screenshot](./docs/homepage.png)
