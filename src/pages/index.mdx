@@ -27,6 +27,12 @@ import NPMImage from "../images/docs/NPM.png";
 import PythonImage from "../images/docs/Python.png";
 import SocketioImage from "../images/docs/Socket.io.png";
 import VitejsImage from "../images/docs/Vite.js.png";
+import AgentsSDKImage from "../images/docs/agentsSDK.svg";
+import CrewAIImage from "../images/docs/crewai.svg";
+import LangGraphImage from "../images/docs/langgraph.png";
+import MCPImage from "../images/docs/mcp.svg";
+import OpenAIImage from "../images/docs/agentsSDK.svg";
+import AnthropicImage from "../images/docs/anthropic.svg";
 
 import { Image } from "astro:assets";
 
@@ -49,12 +55,11 @@ import { Image } from "astro:assets";
 🚀 **Recent Achievements:**
 
 <ul className='list-disc ml-6'>
-<li>**Cut API latency from 600ms → 85ms** by implementing Redis caching to eliminate repetitive database queries</li>
-<li>**Built async job system** to replace blocking 30s API requests with background processing and real-time progress updates</li>
-<li>**Implemented real-time progress tracking** with custom React hooks for seamless UX</li>
-<li>**Reduced deployment cycles by 80%** (25min → 5min) via automated CI/CD</li>
-<li>**Containerized entire application** with Docker Compose for consistent deployments</li>
-<li>**Architected clean backend** with layered architecture (Controller/Service/Repository) and dependency injection</li>
+<li>Reduced application load time from **600 ms to 85 ms (-85.8%)** by implementing caching for frequent database queries.</li>
+<li>Resolved UI blocking issue during long-running story generation (**~30s**) by implementing a **background job queue with BullMQ + Redis** and streaming real-time progress updates to the frontend.</li>
+<li>Developed automated CI/CD pipeline, reducing deployment time from **25 minutes to 5 minutes** through full automation.</li>
+<li>**Eliminated 1.3s request latency** during accessToken refresh by migrating session management from relational DB to Redis.</li>
+<li>Architected clean, testable backend with layered architecture (**Controller/Service/Repository**) and dependency injection</li>
 </ul>
     <br />
     
@@ -104,6 +109,17 @@ When I'm not building production-ready systems, I'm exploring the world - I've b
     <Tech src={PrismaImage} alt="Prisma" label="Prisma" />
     <Tech src={RedisImage} alt="Redis" label="Redis" />
     <Tech src={BullmqImage} alt="BullMQ" label="BullMQ" />
+  </div>
+</div>
+<div className="flex items-center gap-6">
+  <h3 className="w-32 text-right font-medium text-sm">AI/ML</h3>
+  <div className="flex-1 grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-4 place-items-center">
+    <Tech src={AgentsSDKImage} alt="OpenAI Agents SDK" label="OpenAI Agents SDK" />
+    <Tech src={CrewAIImage} alt="CrewAI" label="CrewAI" />
+    <Tech src={LangGraphImage} alt="LangGraph" label="LangGraph" />
+    <Tech src={MCPImage} alt="MCP" label="MCP" />
+    <Tech src={OpenAIImage} alt="OpenAI API" label="OpenAI API" />
+    <Tech src={AnthropicImage} alt="Anthropic API" label="Anthropic API" />
   </div>
 </div>
 {/* Infra & DevOps */}
